@@ -1,0 +1,33 @@
+<!-- NOTA IMPORTANTE: Por cuestiones de espacio en el encabezado no logré agregar el logo de Argentina Programa
+así que decidí agregarlo en mi FOOTER. Espero no sea molestia y mis disculpas -->
+
+<body>
+    <!-- MENU ENCABEZADO -->
+    <div class="contenedor-header">
+      <header>
+          <div class="logo">
+              <a href="#"><tr>{{Persona?.nombre}}</tr></a>
+          </div>
+          <button *ngIf="!isLogged" [routerLink]="['/login']">
+            Iniciar Sesión
+            <span class="overlay"></span>
+          </button>
+          <button *ngIf="isLogged" (click)="onLogOut()" [routerLink]="['/login']">
+            Cerrar Sesión
+            <span class="overlay"></span>
+          </button>
+          <nav id="nav">
+              <ul>
+                  <li><a href="#inicio" onclick="seleccionar()">INICIO</a></li>
+                  <li><a href="#sobremi" onclick="seleccionar()">SOBRE MI</a></li>
+                  <li><a href="#skills" onclick="seleccionar()">SKILLS</a></li>
+                  <li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
+                  <li><a href="#contacto" onclick="seleccionar()">CONTACTO</a></li>
+              </ul>
+          </nav>
+          <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+              <i class="fa-solid fa-bars"></i>
+          </div>
+      </header>
+  </div>
+  </body>

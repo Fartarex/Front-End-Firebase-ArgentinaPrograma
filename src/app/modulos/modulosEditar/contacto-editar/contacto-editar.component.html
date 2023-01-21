@@ -1,0 +1,47 @@
+<!-- NOTA IMPORTANTE: Por cuestiones de espacio en el encabezado no logré agregar el logo de Argentina Programa
+así que decidí agregarlo en mi FOOTER. Espero no sea molestia y mis disculpas -->
+
+<body>
+    <!-- SECCION CONTACTO -->
+    <section id="contacto" class="contacto">
+        <div class="contenido-seccion">
+            <h2>CONTACTO</h2>
+            <div class="fila">
+                <!-- Formulario -->
+                <div class="col">
+                    <form action="https://formsubmit.co/fartarexmagnaldi@gmail.com" method="post">
+                    <input type="text" name="name" placeholder="Tú Nombre">
+                    <input type="text" name="" placeholder="Número telefónico">
+                    <input type="text" name="" placeholder="Dirección de correo">
+                    <input type="text" name="" placeholder="Tema">
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
+                    
+                    <button>
+                        Enviar Mensaje<i class="fa-solid fa-paper-plane"></i>
+                        <span class="overlay"></span>
+                    </button>
+                    </form>
+                </div>
+                <!-- Mapa -->
+                <div class="col">
+                    <img src="assets/img/ubicacion.png" alt="">
+                    <div class="info">
+                        <ul>
+                            <li>
+                                <i class="fa-solid fa-location-dot"></i>
+                                {{Persona?.domicilio}}
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-mobile-screen"></i>
+                                Llamame: {{Persona?.telefono}} 
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-envelope"></i>
+                                Email: {{Persona?.correo}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

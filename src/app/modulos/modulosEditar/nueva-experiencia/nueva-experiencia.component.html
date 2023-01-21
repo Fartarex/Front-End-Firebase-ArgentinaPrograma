@@ -1,0 +1,86 @@
+<!-- NOTA IMPORTANTE: Por cuestiones de espacio en el encabezado no logré agregar el logo de Argentina Programa
+así que decidí agregarlo en mi FOOTER. Espero no sea molestia y mis disculpas -->
+
+<body>
+    <section id="contacto" class="contacto">
+             <div class="fila">
+                  <div  class="col" data-wow-duration="0.5s" data-wow-delay="0.25s" >
+                    <div class="contenido-seccion">
+                                <div class="section-heading">
+                                    <h2>Crear nueva EXPERIENCIA</h2>
+                                    <h3>Nota: Todos los campos deben ser llenados</h3>
+                                </div>
+                            </div>
+                            <div class="col_2">
+                                <fieldset>
+                                  <button [routerLink]="['/portfolio']">
+                                      Volver 
+                                      <span class="overlay"></span>
+                                  </button>
+                                </fieldset>
+                              </div>
+                    <form [formGroup]="camposCompletos" (ngSubmit)="guardarNuevaExperiencia()" >
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <fieldset>
+                                            <input class="form-control" [(ngModel)]="datosPortfolio.formExperiencia.titulo" formControlName="titulo" type="text" name="titulo" id="titulo" pattern="[^ @]*@[^ @]*"
+                                            placeholder="Titulo" required="">
+                                        <div *ngIf="Titulo?.hasError && Titulo?.touched">
+                                            <p *ngIf="Titulo?.hasError('required')" class="text-danger">
+                                                El Titulo es Requerido
+                                            </p>
+                                        </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <fieldset>
+                                            <input class="form-control" [(ngModel)]="datosPortfolio.formExperiencia.empresa" formControlName="empresa" type="text" name="empresa" id="empresa" 
+                                            placeholder="Empresa" required="">
+                                            <div *ngIf="Empresa?.hasError && Empresa?.touched">
+                                                <p *ngIf="Empresa?.hasError('required')" class="text-danger">
+                                                    La Empresa es Requerida
+                                                </p>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <fieldset>
+                                            <input class="form-control" [(ngModel)]="datosPortfolio.formExperiencia.fechas" formControlName="fechas" type="text" name="fechas" id="fechas" 
+                                            placeholder="Fechas" required="">
+                                            <div *ngIf="Fechas?.hasError && Fechas?.touched">
+                                                <p *ngIf="Fechas?.hasError('required')" class="text-danger">
+                                                    Las Fechas son Requeridas
+                                                </p>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <fieldset>
+                                            <input class="form-control" [(ngModel)]="datosPortfolio.formExperiencia.descripcion" formControlName="descripcion" type="subject" name="descripcion"  id="descripcion" placeholder="Descripcion"
+                                            autocomplete="on">
+                                        <div *ngIf="Descripcion?.hasError && Descripcion?.touched">
+                                            <p *ngIf="Descripcion?.hasError('required')" class="text-danger">
+                                                La Descripcion es Requerida
+                                            </p>
+                                        </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <fieldset>
+                                            <button type="submit">
+                                                Guardar <i class="fa-solid fa-paper-plane"></i>
+                                                <span class="overlay"></span>
+                                            </button>
+                                          </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                    </form>
+                </div>
+            </div>
+    </section>
+
+    <app-footer-forms></app-footer-forms>
+
+</body>

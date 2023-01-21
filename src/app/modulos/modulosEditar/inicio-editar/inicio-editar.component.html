@@ -1,0 +1,28 @@
+<!-- NOTA IMPORTANTE: Por cuestiones de espacio en el encabezado no logré agregar el logo de Argentina Programa
+así que decidí agregarlo en mi FOOTER. Espero no sea molestia y mis disculpas -->
+
+<body>
+    <!-- SECCION INICIO -->
+    <section id="inicio" class="inicio">
+        <div class="contenido-banner">
+            <div *ngIf="isLogged">
+                <i [routerLink]="['/update-persona']" class="icon-copy fa fa-pencil" href="#" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Editar"
+                    style="cursor:pointer; cursor: hand"></i>
+                <a> | </a>
+                <i (click)="eliminarPersona()" class="icon-copy fa fa-trash" href="#" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Eliminar"
+                    style="cursor:pointer; cursor: hand"></i>
+            </div>
+            <br>
+            <div class="contenedor-img">
+                <img src={{Persona?.url_foto}} alt="">
+            </div>
+            <h1>{{Persona?.apellido}} {{Persona?.nombre}}</h1>
+            <h2>{{Persona?.titulo}}</h2>
+            <div class="redes">
+                <a href="https://www.facebook.com/facundo.magnaldi"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://wa.me/542634401867?text=!Hola,%20este%20es%20mi%20n%C3%BAmero!%20Facundo%20A.%20Magnaldi"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </section>
+</body>

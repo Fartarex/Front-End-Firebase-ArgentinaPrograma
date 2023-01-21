@@ -1,0 +1,94 @@
+<!-- NOTA IMPORTANTE: Por cuestiones de espacio en el encabezado no logré agregar el logo de Argentina Programa
+así que decidí agregarlo en mi FOOTER. Espero no sea molestia y mis disculpas -->
+
+<body>
+    <!-- SECCION SOBRE MI -->
+    <section id="sobremi" class="sobremi">
+        <div class="contenido-seccion">
+            <div *ngIf="isLogged">
+                <i [routerLink]="['/update-persona']" class="icon-copy fa fa-pencil" href="#" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Editar"
+                    style="cursor:pointer; cursor: hand"></i>
+                <a> | </a>
+                <i (click)="eliminarPersona()" class="icon-copy fa fa-trash" href="#" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Eliminar"
+                    style="cursor:pointer; cursor: hand"></i>
+            </div>
+
+
+            <h2>Sobre Mí</h2>
+            <p><span>Hola, soy {{Persona?.apellido}} {{Persona?.nombre}}</span> {{Persona?.sobre_mi}}</p>
+    
+            <div class="fila">
+                <!-- datos personales -->
+                <div class="col">
+                    <h3>Datos Personales</h3>
+                    <ul>
+                        <li>
+                            <strong>Cumpleaños</strong>
+                            {{Persona?.cumpleanos}}
+                        </li>
+                        <li>
+                            <strong>Edad</strong>
+                            {{Persona?.edad}}
+                        </li>
+                        <li>
+                            <strong>Teléfono movil</strong>
+                            {{Persona?.telefono}}
+                        </li>
+                        <li>
+                            <strong>Email</strong>
+                            {{Persona?.correo}}
+                        </li>
+                        <li>
+                            <strong>Nacionalidad</strong>
+                            {{Persona?.nacionalidad}}
+                        </li>
+                        <li>
+                            <strong>Dirección</strong>
+                            {{Persona?.domicilio}}
+                        </li>                       
+                    </ul>
+                </div>
+    
+                <!-- intereses -->
+                <div class="col">
+                    <h3>Intereses</h3>
+                    <div class="contenedor-intereses">
+                        <div class="interes">
+                            <i class="fa-solid fa-gamepad"></i>
+                            <span>JUEGOS</span>
+                        </div>
+                        <div class="interes">
+                            <i class="fa-solid fa-headphones"></i>
+                            <span>MUSICA</span>
+                        </div>
+                        <div class="interes">
+                            <i class="fa-solid fa-plane"></i>
+                            <span>VIAJAR</span>
+                        </div>
+                        <div class="interes">
+                            <i class="fa-solid fa-person-hiking"></i>
+                            <span>DEPORTE</span>
+                        </div>
+                        <div class="interes">
+                            <i class="fa-solid fa-book"></i>
+                            <span>LIBROS</span>
+                        </div>
+                        <div class="interes">
+                            <i class="fa-solid fa-car"></i>
+                            <span>AUTOS</span>
+                        </div>                       
+                    </div>
+                </div>
+            </div>
+            <div class="imagenes">
+                <div class="cv" style="text-align: center;">
+                    <img src={{Persona?.cv}} alt="" style="height: 70%; width: 70%;">
+                </div>
+                <br>
+            </div>
+            <div class="certificado" style="text-align: center;">
+                <img src={{Persona?.contrasena}} alt="" style="height: 100%; width: 100%; align-items: center;">
+            </div>
+        </div>
+    </section>
+    </body>

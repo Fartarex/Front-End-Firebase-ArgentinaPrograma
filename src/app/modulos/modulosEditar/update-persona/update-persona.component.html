@@ -1,0 +1,185 @@
+<!-- NOTA IMPORTANTE: Por cuestiones de espacio en el encabezado no logré agregar el logo de Argentina Programa
+así que decidí agregarlo en mi FOOTER. Espero no sea molestia y mis disculpas -->
+
+<body>
+    <section id="contacto" class="contacto">
+             <div class="fila">
+                  <div  class="col" data-wow-duration="0.5s" data-wow-delay="0.25s" >
+                    <div class="contenido-seccion">
+                                <div class="section-heading">
+                                    <h2>Editar info. PERSONA</h2>
+                                    <h3>Nota: Todos los campos deben ser llenados</h3>
+                                </div>
+                            </div>
+                            <div class="col_2">
+                                <fieldset>
+                                  <button [routerLink]="['/portfolio']">
+                                      Volver 
+                                      <span class="overlay"></span>
+                                  </button>
+                                </fieldset>
+                              </div>
+                    <form [formGroup]="camposCompletos" (ngSubmit)="editarInfoPersona()" >
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <fieldset>
+                                            <input class="form-control" [(ngModel)]="datosPortfolio.formPersona.nombre" formControlName="nombre" type="text" name="nombre" id="nombre" pattern="[^ @]*@[^ @]*"
+                                            placeholder="Nombre" required="">
+                                        <div *ngIf="Nombre?.hasError && Nombre?.touched">
+                                            <p *ngIf="Nombre?.hasError('required')" class="text-danger">
+                                                El Nombre es Requerido
+                                            </p>
+                                        </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <fieldset>
+                                            <input class="form-control" [(ngModel)]="datosPortfolio.formPersona.apellido" formControlName="apellido" type="text" name="apellido" id="apellido" 
+                                            placeholder="Apellido" required="">
+                                            <div *ngIf="Apellido?.hasError && Apellido?.touched">
+                                                <p *ngIf="Apellido?.hasError('required')" class="text-danger">
+                                                    El Apellido es Requerido
+                                                </p>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <fieldset>
+                                            <input class="form-control" [(ngModel)]="datosPortfolio.formPersona.domicilio" formControlName="domicilio" type="text" name="domicilio" id="domicilio" 
+                                            placeholder="Domicilio" required="">
+                                            <div *ngIf="Domicilio?.hasError && Domicilio?.touched">
+                                                <p *ngIf="Domicilio?.hasError('required')" class="text-danger">
+                                                    El Domicilio es Requerido
+                                                </p>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <fieldset>
+                                            <input class="form-control" [(ngModel)]="datosPortfolio.formPersona.telefono" formControlName="telefono" type="subject" name="telefono"  id="telefono" placeholder="Telefono"
+                                            autocomplete="on">
+                                        <div *ngIf="Telefono?.hasError && Telefono?.touched">
+                                            <p *ngIf="Telefono?.hasError('required')" class="text-danger">
+                                                El Telefono es Requerido
+                                            </p>
+                                        </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <fieldset>
+                                            <input class="form-control" [(ngModel)]="datosPortfolio.formPersona.correo" formControlName="correo" type="text" name="correo" id="correo" pattern="[^ @]*@[^ @]*"
+                                            placeholder="Correo" required="">
+                                        <div *ngIf="Correo?.hasError && Correo?.touched">
+                                            <p *ngIf="Correo?.hasError('required')" class="text-danger">
+                                                El Correo es Requerido
+                                            </p>
+                                        </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <fieldset>
+                                            <input class="form-control" [(ngModel)]="datosPortfolio.formPersona.sobre_mi" formControlName="sobre_mi" type="text" name="sobre_mi" id="sobre_mi" pattern="[^ @]*@[^ @]*"
+                                            placeholder="Sobre_mi" required="">
+                                        <div *ngIf="Sobre_mi?.hasError && Sobre_mi?.touched">
+                                            <p *ngIf="Sobre_mi?.hasError('required')" class="text-danger">
+                                                Sobre_mi es Requerido
+                                            </p>
+                                        </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <fieldset>
+                                            <input class="form-control" [(ngModel)]="datosPortfolio.formPersona.url_foto" formControlName="url_foto" type="text" name="url_foto" id="url_foto" pattern="[^ @]*@[^ @]*"
+                                            placeholder="URL de la foto de perfil" required="">
+                                        <div *ngIf="Url_foto?.hasError && Url_foto?.touched">
+                                            <p *ngIf="Url_foto?.hasError('required')" class="text-danger">
+                                                Url_foto es Requerido
+                                            </p>
+                                        </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <fieldset>
+                                            <input class="form-control" [(ngModel)]="datosPortfolio.formPersona.titulo" formControlName="titulo" type="text" name="titulo" id="titulo" pattern="[^ @]*@[^ @]*"
+                                            placeholder="Titulo" required="">
+                                        <div *ngIf="Titulo?.hasError && Titulo?.touched">
+                                            <p *ngIf="Titulo?.hasError('required')" class="text-danger">
+                                                El Titulo es Requerido
+                                            </p>
+                                        </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <fieldset>
+                                            <input class="form-control" [(ngModel)]="datosPortfolio.formPersona.edad" formControlName="edad" type="text" name="edad" id="edad" pattern="[^ @]*@[^ @]*"
+                                            placeholder="Edad" required="">
+                                        <div *ngIf="Edad?.hasError && Edad?.touched">
+                                            <p *ngIf="Edad?.hasError('required')" class="text-danger">
+                                                La Edad es Requerida
+                                            </p>
+                                        </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <fieldset>
+                                            <input class="form-control" [(ngModel)]="datosPortfolio.formPersona.cumpleanos" formControlName="cumpleanos" type="text" name="cumpleanos" id="cumpleanos" pattern="[^ @]*@[^ @]*"
+                                            placeholder="Cumpleanos" required="">
+                                        <div *ngIf="Cumpleanos?.hasError && Cumpleanos?.touched">
+                                            <p *ngIf="Cumpleanos?.hasError('required')" class="text-danger">
+                                                El Cumpleaños es Requerido
+                                            </p>
+                                        </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <fieldset>
+                                            <input class="form-control" [(ngModel)]="datosPortfolio.formPersona.nacionalidad" formControlName="nacionalidad" type="text" name="nacionalidad" id="nacionalidad" pattern="[^ @]*@[^ @]*"
+                                            placeholder="Nacionalidad" required="">
+                                        <div *ngIf="Nacionalidad?.hasError && Nacionalidad?.touched">
+                                            <p *ngIf="Nacionalidad?.hasError('required')" class="text-danger">
+                                                La Nacionalidad es Requerida
+                                            </p>
+                                        </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <fieldset>
+                                            <input class="form-control" [(ngModel)]="datosPortfolio.formPersona.cv" formControlName="cv" type="text" name="cv" id="cv" pattern="[^ @]*@[^ @]*"
+                                            placeholder="URL del Curriculum vitae (CV)" required="">
+                                        <div *ngIf="Cv?.hasError && Cv?.touched">
+                                            <p *ngIf="Cv?.hasError('required')" class="text-danger">
+                                                El CV es Requerido
+                                            </p>
+                                        </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <fieldset>
+                                            <input class="form-control" [(ngModel)]="datosPortfolio.formPersona.contrasena" formControlName="contrasena" type="text" name="contrasena" id="contrasena" pattern="[^ @]*@[^ @]*"
+                                            placeholder="URL del Certificado de pasantías" required="">
+                                        <div *ngIf="Certificado?.hasError && Certificado?.touched">
+                                            <p *ngIf="Certificado?.hasError('required')" class="text-danger">
+                                                El Certificado es Requerido
+                                            </p>
+                                        </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <fieldset>
+                                            <button type="submit">
+                                                Guardar <i class="fa-solid fa-paper-plane"></i>
+                                                <span class="overlay"></span>
+                                            </button>
+                                          </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                    </form>
+                </div>
+            </div>
+    </section>
+
+    <app-footer-forms></app-footer-forms>
+
+</body>

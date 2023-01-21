@@ -1,0 +1,87 @@
+<!-- NOTA IMPORTANTE: Por cuestiones de espacio en el encabezado no logré agregar el logo de Argentina Programa
+así que decidí agregarlo en mi FOOTER. Espero no sea molestia y mis disculpas -->
+
+<body>
+    <!-- SECCION CURRICULUM -->
+    <section id="curriculum" class="curriculum">
+       <div class="contenido-seccion">
+           <h2>Curriculum</h2>
+           <div class="fila">
+               <div class="col izquierda">
+                
+                   <h3>Educación</h3>
+                   <div *ngIf="isLogged">( <i [routerLink]="['/nuevo-estudio']" class="icon-copy fa fa-plus" href="#" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Agregar"
+                   style="cursor:pointer; cursor: hand"></i> ) Nuevo estudio</div>
+                   <br>
+                   <div *ngFor="let estudios of EstudiosLista" class="item izq">
+                    <div *ngIf="isLogged">
+                    <i (click)="editarEstudio(estudios.id)" [routerLink]="['/update-estudio']" class="icon-copy fa fa-pencil" href="#" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Editar"
+                        style="cursor:pointer; cursor: hand"></i>
+                    <a> | </a>
+                    <i (click)="eliminarEstudio(estudios.id)" class="icon-copy fa fa-trash" href="#" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Eliminar"
+                        style="cursor:pointer; cursor: hand"></i>
+                   </div>
+                   <br>
+                       <h4>{{estudios?.titulo}}</h4>
+                       <span class="casa">{{estudios?.programa}}</span>
+                       <span class="fecha">{{estudios?.fechas}}</span>
+                       <p>{{estudios?.descripcion}} </p>
+                       <div class="conectori">
+                           <div class="circuloi"></div>
+                       </div>
+                   </div>
+
+                   <h3>Experiencia laboral</h3>
+                   <div *ngIf="isLogged">( <i [routerLink]="['/nueva-experiencia']" class="icon-copy fa fa-plus" href="#" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Agregar"
+                    style="cursor:pointer; cursor: hand"></i> ) Nueva experiencia</div>
+                    <br>
+                    <div *ngFor="let experiencia of ExperienciaLista" class="item izq">
+                        <div *ngIf="isLogged">
+                        <i (click)="editarExperiencia(experiencia.id)" [routerLink]="['/update-experiencia']" class="icon-copy fa fa-pencil" href="#" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Editar"
+                            style="cursor:pointer; cursor: hand"></i>
+                        <a> | </a>
+                        <i (click)="eliminarExperiencia(experiencia.id)" class="icon-copy fa fa-trash" href="#" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Eliminar"
+                            style="cursor:pointer; cursor: hand"></i>
+                       </div>
+                       <br *ngIf="isLogged">
+                           <h4>{{experiencia?.titulo}}</h4>
+                           <span class="casa">{{experiencia?.empresa}}</span>
+                           <span class="fecha">{{experiencia?.fechas}}</span>
+                           <p>{{experiencia?.descripcion}} </p>
+                           <div class="conectori">
+                               <div class="circuloi"></div>
+                           </div>
+                       </div>
+
+                       <h3>Proyectos</h3>
+                   <div *ngIf="isLogged">( <i [routerLink]="['/nuevo-proyecto']" class="icon-copy fa fa-plus" href="#" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Agregar"
+                    style="cursor:pointer; cursor: hand"></i> ) Nuevo proyecto</div>
+                    <br *ngIf="isLogged">
+                    <div *ngFor="let proyecto of ProyectoLista" class="item izq">
+                        <div *ngIf="isLogged">
+                        <i (click)="editarProyecto(proyecto.id)" [routerLink]="['/update-proyecto']" class="icon-copy fa fa-pencil" href="#" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Editar"
+                            style="cursor:pointer; cursor: hand"></i>
+                        <a> | </a>
+                        <i (click)="eliminarProyecto(proyecto.id)" class="icon-copy fa fa-trash" href="#" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Eliminar"
+                            style="cursor:pointer; cursor: hand"></i>
+                       </div>
+                       <br *ngIf="isLogged">
+                           <h4>{{proyecto?.titulo}}</h4>
+                           <span class="casa">{{proyecto?.programa}}</span>
+                           <span class="fecha">{{proyecto?.fechas}}</span>
+                           <p>{{proyecto?.descripcion}} </p>
+
+                           <div class="img" style="text-align: center;">
+                            <img src={{proyecto?.url_imagen}} alt="" style="height: 50%; width: 50%;">
+                           </div>
+                           <br>
+                           <br>
+                           <div class="redes">
+                            <a href={{proyecto?.url}}>LINK DEL PROYECTO</a>
+                           </div>               
+                  </div>
+               </div>
+           </div>
+       </div>
+   </section>
+</body>
