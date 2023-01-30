@@ -33,7 +33,7 @@ export class UpdateProyectoComponent implements OnInit {
   editarProyecto(){
     this.datosPortfolio.editarDatosProyecto(this.datosPortfolio.formProyecto, this.idProyecto).subscribe(data => {
       this.datosPortfolio.formProyecto = data;
-      alert('Proyecto agregado con éxito')
+      alert('Proyecto guardado con éxito')
       this.ruta.navigate(['/portfolio']);
     }, err => {
       alert('Se ha producido un error, intente nuevamente')

@@ -33,7 +33,7 @@ export class UpdateEstudioComponent implements OnInit {
   editarEstudio(){
     this.datosPortfolio.editarDatosEstudio(this.datosPortfolio.formEstudios,  this.idEstudio).subscribe(data => {
       this.datosPortfolio.formEstudios = data;
-      alert('Estudo agregado con éxito')
+      alert('Estudo guardado con éxito')
       this.ruta.navigate(['/portfolio']);
     }, err => {
       alert('Se ha producido un error, intente nuevamente')

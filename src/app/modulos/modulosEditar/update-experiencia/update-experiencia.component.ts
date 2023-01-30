@@ -31,7 +31,7 @@ export class UpdateExperienciaComponent implements OnInit {
   editarExperiencia(){
     this.datosPortfolio.editarDatosExperiencia(this.datosPortfolio.formExperiencia, this.idExperiencia).subscribe(data => {
       this.datosPortfolio.formExperiencia = data;
-      alert('Experiencia agregada con éxito')
+      alert('Experiencia guardada con éxito')
       this.ruta.navigate(['/portfolio']);
     }, err => {
       alert('Se ha producido un error, intente nuevamente')
