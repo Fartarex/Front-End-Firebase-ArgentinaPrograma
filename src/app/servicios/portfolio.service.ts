@@ -16,7 +16,7 @@ import { environment } from 'src/environments/environment';
 })
 export class PortfolioService {
 
-  URL = 'https://easy-atlanta-fartarex.koyeb.app';
+  URL = 'https://back-d6ro.onrender.com';
 
   constructor(private http:HttpClient) { }
 
