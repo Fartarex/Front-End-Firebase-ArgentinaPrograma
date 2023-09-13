@@ -11,7 +11,7 @@ import { NuevoUsuario } from '../modelos/nuevo-usuario';
 })
 export class AuthService {
 
-  URL = 'https://easy-atlanta-fartarex.koyeb.app/auth/';
+  URL = 'https://back-d6ro.onrender.com/auth/';
 
   constructor(private httpClient: HttpClient) {}
 
